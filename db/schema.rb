@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150819020259) do
+ActiveRecord::Schema.define(:version => 20150819062121) do
 
   create_table "exercises", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,24 @@ ActiveRecord::Schema.define(:version => 20150819020259) do
     t.string   "secondary_area"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "lifts", :force => true do |t|
+    t.integer  "sets"
+    t.integer  "reps"
+    t.integer  "weight"
+    t.integer  "exercise_id"
+    t.integer  "workout_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "lifts", ["exercise_id"], :name => "index_lifts_on_exercise_id"
+  add_index "lifts", ["workout_id"], :name => "index_lifts_on_workout_id"
+
+  create_table "workouts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
