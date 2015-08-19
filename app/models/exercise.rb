@@ -5,5 +5,8 @@ class Exercise < ActiveRecord::Base
 
   has_many :workouts, through: :lifts
 
+def name_for_select
+	name.capitalize
+end
   
 end

@@ -1,0 +1,15 @@
+<div class="container">
+	<h1>New Workout</h1>
+</div>
+
+<div class="container">
+	<%= form_for :lift, url: workouts_path do |f| %>
+	<p>Exercise Name: <br>
+		<%= f.collection_select(:exercise_id, Exercise.all, :id, :name_for_select) %>
+	</p>
+	<p>Sets: <%= f.select :sets, options_for_select( (1..10).step(1)) %></p>
+	<p>Reps: <%=f.select :reps, options_for_select( (1..60).step(1)) %></p>
+	<p>Weight: <%= f.select :weight, options_for_select( (10..250).step(5))%></p>
+	<%= f.submit "Submit", class: "btn-btn-info" %>
+	<% end %>
+</div>
