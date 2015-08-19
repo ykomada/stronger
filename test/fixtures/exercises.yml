@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  primary_area: MyString
+  secondary_area: MyString
+
+two:
+  name: MyString
+  primary_area: MyString
+  secondary_area: MyString

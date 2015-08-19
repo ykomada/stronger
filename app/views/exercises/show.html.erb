@@ -1,0 +1,12 @@
+<div class="container">
+	<h1><%= @exercise.name %></h1>
+</div>
+<div class="container">
+	<p>Primary Area: <%= @exercise.primary_area %><br>
+		Secondary Area: <%= @exercise.secondary_area %><br>
+	</p>
+</div>
+
+<div class="container">
+	<%= link_to 'All Exercises', controller: 'exercises' %>
+</div>

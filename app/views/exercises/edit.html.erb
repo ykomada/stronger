@@ -1,0 +1,18 @@
+<div class="container">
+	<h1>Edit Exercise</h1>
+</div>
+
+<div class="container">
+	<%= form_for :exercise, url: exercise_path(@exercise), method: :put do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %><br>
+		<%= f.label :primary_area %><br>
+		<%= f.select :primary_area, options_for_select(["Front", "Back", "Lower", "Full Body"]) %><br>
+		<%= f.label :secondary_area %><br>
+		<%= f.select :secondary_area, options_for_select(["Chest", "Abs", "Shoulders", "Biceps", "Triceps", "Upper Back", "Lower Back", "Glutes", "Quads"])%><br>
+	</p>
+	<%= f.submit %>
+	<% end %>
+</div>
+<%= link_to 'Back', exercise_path %>
